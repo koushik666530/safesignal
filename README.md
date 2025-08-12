@@ -27,11 +27,11 @@ You can access the live website----[here](https://github.com/koushik666530/safes
 1. Clone the repository:
    ```bash
    git clone  https://github.com/koushik666530/safesignal.git
-
+ ```
    2. Open `index.html` in your browser to view the website.
 
-
-   Contributions are welcome! If you'd like to add features or improve the code, please follow these steps:
+## Contributions
+ Contributions are welcome! If you'd like to add features or improve the code, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch:
