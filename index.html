@@ -1,52 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safety Alert for Women</title>
-    <link rel="stylesheet" href="stylesheet.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SafeSignal — Women's Safety Alert</title>
+  <link rel="stylesheet" href="stylesheet.css" />
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="SafeSignal Logo" class="logo">
-        <div>
-            <h1>SafeSignal</h1>
-            <p>Safety Alert Website for Women</p>
-        </div>
-    </header>
+  <header class="site-header">
+    <img src="logo.png" alt="SafeSignal logo" class="logo"/>
+    <h1>SafeSignal</h1>
+    <p class="tagline">Quickly alert trusted contacts with your location</p>
+  </header>
 
+  <main class="container">
+    <section class="alert-panel" aria-labelledby="alert-title">
+      <h2 id="alert-title">Emergency Alert</h2>
+      <p class="explain">If you feel unsafe, use the big red button to alert your contacts immediately.</p>
 
-    <div class="container">
-        <div class="feature">
-            <h3>Emergency Siren Button</h3>
-            <p>Play a loud siren to alert nearby individuals in emergencies.</p>
-            <a href="#" class="button" id="sirenButton">Play Siren</a>
-        </div>
+      <div class="big-buttons">
+        <button id="panicBtn" class="btn btn-danger" aria-label="Send emergency alert">Send Alert</button>
+        <button id="fakeCallBtn" class="btn btn-secondary" aria-label="Start fake call">Start Fake Call</button>
+      </div>
 
-        <div class="feature">
-            <h3>Live Location Sharing</h3>
-            <p>Share your real-time location with your Safety Circle to ensure they know your whereabouts.</p>
-            <a href="#" class="button">Share Location</a>
-        </div>
+      <div class="actions-row">
+        <button id="shareWhatsApp" class="btn small">Share via WhatsApp</button>
+        <button id="shareSms" class="btn small">Share via SMS</button>
+        <button id="shareMail" class="btn small">Share via Email</button>
+      </div>
 
-        <div class="feature">
-            <h3>Fake Call Feature</h3>
-            <p>Simulate an incoming call to help you safely exit uncomfortable situations.</p>
-            <a href="#" class="button" id="callButton">Simulate Call</a>
-        </div>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+    </section>
 
-        <div class="feature">
-            <h3>Nearby Safe Zones</h3>
-            <p>Find police stations, hospitals, or verified safe places near your location.</p>
-            <a href="#" class="button">Find Safe Zones</a>
-        </div>
-    </div>
+    <section class="contacts-panel" aria-labelledby="contacts-title">
+      <h2 id="contacts-title">Trusted Contacts</h2>
+      <form id="contactForm" class="contact-form" aria-label="Add trusted contact">
+        <input id="contactName" placeholder="Name" required />
+        <input id="contactPhone" placeholder="Phone (optional)" />
+        <input id="contactEmail" placeholder="Email (optional)" />
+        <button type="submit" class="btn">Add Contact</button>
+      </form>
 
-    <footer>
-        <p>&copy; 2025 Safety Alert. All rights reserved.</p>
-    </footer>
+      <ul id="contactsList" class="contacts-list" aria-live="polite"></ul>
+    </section>
 
-    <!-- Link to external JavaScript file -->
-    <script src="script.js"></script>
+    <section class="howto">
+      <h3>How it works</h3>
+      <ol>
+        <li>The app asks for permission to access location — allow it for accurate alerts.</li>
+        <li>When you tap "Send Alert" the app obtains your location and prepares messages.</li>
+        <li>The app opens your email/SMS/WhatsApp client with a prefilled message — tap send to notify your contacts.</li>
+      </ol>
+      <p class="note"><strong>Note:</strong> SMS/WhatsApp/email opening depends on device and browser. On desktops some features (SMS) may open apps installed on your machine.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Built with care • Test responsibly • Make sure contacts are correct</small>
+  </footer>
+
+  <!-- audio -->
+  <audio id="siren" src="sirenaudio.mp3" preload="auto"></audio>
+  <audio id="callSound" src="call.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
 </body>
 </html>
