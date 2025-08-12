@@ -20,3 +20,6 @@ SafeSignal is a women's safety alert website designed to provide quick and acces
 
 - **Frontend**: HTML, CSS, JavaScript
 - **Hosting**: GitHub Pages
+
+- ## Live Website
+You can access the live website
