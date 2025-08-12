@@ -1,58 +1,71 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5e9e0; /* Light peachy background */
+:root{
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #ff3860;
+  --muted: #98a0b3;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+  --maxw: 900px;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    background-color: #ccc; /* Grey background */
-    padding: 1rem; /* Add some padding */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:
+linear-gradient(180deg,#071029 0%,#0f1724 60%);color:#e8eef8;-webkit-font-smoothing:antialiased}
+
+.container{
+  max-width:var(--maxw);margin:28px auto;padding:20px;
+  display:grid;grid-template-columns:1fr;gap:18px;
 }
 
-.logo {
-    width: 50px; /* Adjust the width as needed */
-    height: auto;
-    margin-right: 20px; /* Space between logo and text */
+.site-header{
+  display:flex;align-items:center;gap:16px;padding:18px;border-radius:14px;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);
+  box-shadow:0 6px 20px rgba(2,6,23,0.6);
+}
+.logo{width:48px;height:48px;object-fit:contain}
+.site-header h1{margin:0;font-size:20px}
+.tagline{margin:0;color:var(--muted);font-size:13px}
+
+.alert-panel, .contacts-panel, .howto{
+  background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.5);
 }
 
-.container {
-    padding: 2rem;
-}
+.alert-panel h2, .contacts-panel h2{margin-top:0}
 
-.feature {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+.explain{color:var(--muted);margin-bottom:12px}
 
-.feature h3 {
-    margin-top: 0;
+.big-buttons{
+  display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;
 }
-
-.button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #4a4a4a; /* Dark grey for buttons */
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    text-align: center;
+.btn{
+  background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:10px;color:inherit;cursor:pointer;
+  font-weight:600;
 }
-
-.button:hover {
-    background-color: #6b6b6b; /* Slightly lighter grey for hover effect */
+.btn:hover{transform:translateY(-2px)}
+.btn-danger{
+  background: linear-gradient(90deg,var(--accent),#ff6b82);
+  color:white;padding:18px 22px;font-size:18px;border-radius:14px;border:none;box-shadow:0 8px 30px rgba(255,56,96,0.14);
 }
+.btn-secondary{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)}
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #4a4a4a; /* Dark grey for footer */
-    color: white;
-    margin-top: 2rem;
+.actions-row{display:flex;gap:8px;margin-top:8px;margin-bottom:8px;flex-wrap:wrap}
+.small{padding:8px 10px;font-size:14px}
+
+.status{margin-top:6px;color:var(--muted);font-size:14px}
+
+.contact-form{display:flex;gap:8px;flex-wrap:wrap}
+.contact-form input{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.contact-form button{flex:0 0 auto}
+
+.contacts-list{list-style:none;padding:0;margin:12px 0 0 0;display:flex;flex-direction:column;gap:10px}
+.contacts-list li{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;background:rgba(255,255,255,0.02)}
+.contacts-list .meta{display:flex;flex-direction:column}
+.contact-actions{display:flex;gap:8px}
+
+.howto p, .howto li{color:var(--muted)}
+
+.site-footer{text-align:center;color:var(--muted);padding:18px}
+
+@media(min-width:760px){
+  .container{grid-template-columns:1fr 360px}
+  .howto{grid-column:1 / -1}
 }
