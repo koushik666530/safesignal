@@ -23,3 +23,27 @@ SafeSignal is a women's safety alert website designed to provide quick and acces
 
 - ## Live Website
 You can access the live website----[here](https://github.com/koushik666530/safesignal.git)
+
+1. Clone the repository:
+   ```bash
+   git clone  https://github.com/koushik666530/safesignal.git
+
+   2. Open `index.html` in your browser to view the website.
+
+
+   Contributions are welcome! If you'd like to add features or improve the code, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git commit -m "Description of changes"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a pull request.
